@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
+{% block head %}
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+{% endblock %}
+{% block content %}
+    <h1>new post</h1>
+    <form method="POST">
+        <div class="label">
+            subject
+            <span    class="error">
+                {{title_err}}
+            </span>
+        </div>
+        <div class="content">
+        <input type="text"  name = "subject" value = {{subject}}>
+        </div>
+        <div class="label">
+            blog
+            <span class="error">
+                {{content_err}}
+            </span>
+        </div>
+        <div class = "content">
+            <textarea name = "content" >{{content}}</textarea>
+        </div>
+        <div>
+            <input type="SUBMIT">
+        </div>
+    </form>
+{% endblock %}

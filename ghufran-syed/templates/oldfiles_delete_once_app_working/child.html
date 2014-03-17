@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
+{% block head %}
+{% endblock %}
+{% block content %}
+    <h1>Blog</h1>
+    <p>
+    Random Blog
+    </p>
+    <form method="POST">
+        <table>
+            <tr>
+            <td class="label">
+                Title of your Post:
+            </td>
+            <td>
+                <input type = "text" name = "title" value = {{username}}>
+            </td>
+            <td class="error">
+                {{title_err}}
+            </td>
+
+            </tr>
+            <tr>
+                <td class="label">
+                    Enter your content here:
+                </td>
+                <td>
+                    <input type = "textarea" name = "content" value = {{content}}>
+                </td>
+                <td class="error">
+                {{content_err}}
+                </td>
+            </tr>
+        </table>
+
+    </form>
+{% endblock %}

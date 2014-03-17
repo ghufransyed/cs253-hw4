@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
+{% block head %}
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+{% endblock %}
+{% block content %}
+    <h1>Blog</h1>
+    <hr>
+    <form>
+    {% for blogposting in blog_query  %}
+    <ul>
+        <li>{{blogposting.subject}} 
+        <span>
+            <input type="BUTTON" onclick="parent.location='newpost'"
+            value="New Post" class="float-right">
+        </span>
+        <span class="float-right">{{blogposting.created.date()}} </span>
+        </li>
+    </form>
+        <hr>
+        <li>{{blogposting.content}}</li>
+    </ul>
+    <hr>
+    {% endfor %}
+        <div>
+            <input type="BUTTON" onclick="parent.location='newpost'"
+            value="New Post" class="float-right">
+        </div>
+
+{% endblock %}

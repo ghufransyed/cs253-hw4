@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
+{% block head %}
+    {{super()}}
+{% endblock %}
+{% block content %}
+    <h1>Blog</h1>
+    <hr>
+    <div>
+        <h1> {{blog_query.subject}} </h1>
+            <span>
+                <input type="BUTTON" onclick="parent.location='/'"
+                value="Home Page" class="float-right">
+            </span>
+            <span class="float-right">{{blog_query.created.date()}} </span>
+    </div>
+    <div>
+        {{blog_query.content}}
+    </div>
+    <hr>
+
+{% endblock %}
